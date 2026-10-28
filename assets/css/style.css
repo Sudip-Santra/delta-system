@@ -109,7 +109,7 @@ button { font: inherit; color: inherit; }
   font-weight: 550;
   line-height: 1.19;
 }
-.hero h1, .hero h1 * { letter-spacing: -0.027em; }
+.hero h1, .hero h1 * { letter-spacing: -0.03em; }
 /* line breaks pinned to match Wix: br.bd only on desktop, br.bm only on mobile, br.no-m everywhere but mobile */
 br.bd, br.bm { display: none; }
 @media (min-width: 1001px) { br.bd { display: inline; } }
@@ -158,7 +158,7 @@ br.bd, br.bm { display: none; }
 .card.orange p { font-size: 17px; }
 
 .card.beige { background: var(--beige); padding-top: 8px; }
-.card.beige img { width: 224px; height: 254px; object-fit: contain; }
+.card.beige img, .card.beige canvas { display: block; width: 224px; height: 254px; object-fit: contain; }
 
 .card.lavender { background: var(--lavender); color: #fff; padding: 87px 35px 0; }
 .card.lavender h2 { max-width: 240px; }
