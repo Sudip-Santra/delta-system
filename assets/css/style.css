@@ -310,12 +310,14 @@ br.bd, br.bm { display: none; }
 .info strong { font-weight: 650; }
 
 /* ================= Policy pages ================= */
-.policy { width: 670px; max-width: calc(100% - 80px); margin: 0 auto; padding: 37px 0 15px; font-size: 18px; line-height: 25.2px; }
+/* --g: extra column width (added on the right) so Inter, wider than Wix's SF Pro, wraps where Wix does */
+.policy { --g: 24px; width: calc(670px + var(--g)); max-width: calc(100% - 80px + var(--g)); margin: 0 auto; position: relative; left: calc(var(--g) / 2); padding: 37px 0 15px; font-size: 18px; line-height: 25.2px; }
 .policy section + section { margin-top: 47px; }
-.policy h1 { text-align: center; font-size: 50px; font-weight: 550; line-height: 70px; letter-spacing: -0.066em; }
+.policy h1 { text-align: center; font-size: 50px; font-weight: 550; line-height: 70px; }
 .policy .kicker { text-align: center; margin-top: -3px; }
-.policy hr { margin: 23px -20px 26px; border: 0; border-top: 1px solid #ccc; }
-.policy p { letter-spacing: -0.064em; }
+.policy h1, .policy .kicker { margin-right: var(--g); } /* centre over the Wix column, not the widened one */
+.policy hr { margin: 23px calc(var(--g) - 20px) 26px -20px; border: 0; border-top: 1px solid #ccc; }
+.policy, .policy * { letter-spacing: -0.05em; }
 .policy p + p { margin-top: 25.2px; }
 .policy strong { font-weight: 650; }
 .policy a { text-decoration: underline; }
@@ -377,8 +379,10 @@ br.bd, br.bm { display: none; }
 .plan li + li { margin-top: 21px; }
 
 /* Disclaimer page: wider column and roomier spacing than the policies page (as on Wix) */
-.policy-disclaimer { width: 698px; padding: 75px 0 259px; }
-.policy-disclaimer hr { margin: 23px -20px 71px; }
+.policy-single { width: calc(698px + var(--g)); min-height: 1656px; padding: 28px 0 147px; } /* Wix keeps these pages at least 1836px tall */
+.policy-disclaimer { min-height: 0; padding: 75px 0 259px; }
+.policy-single hr { margin: 23px calc(var(--g) - 20px) 30px -20px; }
+.policy-disclaimer hr { margin-bottom: 71px; }
 
 /* ================= Large screens (>1600) ================= */
 @media (min-width: 1601px) {
@@ -574,11 +578,11 @@ br.bd, br.bm { display: none; }
   .info h3 { margin-bottom: 10px; }
   .info > div:first-child, .info > div:last-child { width: auto; margin: 0; padding-top: 0; }
 
-  .policy { max-width: calc(100% - 68px); padding-top: 25px; }
-  .policy h1 { font-size: 40px; line-height: 56px; margin: 0 -12px; }
+  .policy { --g: 8px; max-width: calc(100% - 68px + var(--g)); padding-top: 25px; }
+  .policy h1 { font-size: 40px; line-height: 56px; margin: 0 calc(var(--g) - 12px) 0 -12px; }
   .policy section + section { margin-top: 27px; }
-  .policy section:nth-of-type(1) hr { margin: 38px -20px 45px; }
-  .policy section:nth-of-type(3) hr { margin: 16px -20px 19px; }
+  .policy section:nth-of-type(1) hr { margin: 38px calc(var(--g) - 20px) 45px -20px; }
+  .policy section:nth-of-type(3) hr { margin: 16px calc(var(--g) - 20px) 19px -20px; }
   .policy section:first-of-type p { padding: 0 9px; }
 }
 
@@ -594,8 +598,10 @@ br.bd, br.bm { display: none; }
 }
 
 @media (max-width: 750px) {
-  .policy-disclaimer { max-width: calc(100% - 56px); padding: 22px 0 86px; }
+  .policy-single { --g: 12px; max-width: calc(100% - 56px + var(--g)); min-height: 0; padding: 15px 0 136px; }
+  .policy-single section:nth-of-type(1) hr { margin: 14px calc(var(--g) - 20px) 13px -20px; }
+  .policy-disclaimer { padding: 22px 0 86px; }
   .policy-disclaimer h1 { font-size: 50px; line-height: 70px; }
-  .policy-disclaimer section:nth-of-type(1) hr { margin: 14px -20px 16px; }
-  .policy-disclaimer section:first-of-type p { padding: 0; }
+  .policy-disclaimer section:nth-of-type(1) hr { margin: 14px calc(var(--g) - 20px) 16px -20px; }
+  .policy-single section:first-of-type p { padding: 0; }
 }
