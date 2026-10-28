@@ -39,9 +39,15 @@ ul { margin: 0; padding: 0; list-style: none; }
 button { font: inherit; color: inherit; }
 
 /* ================= Header ================= */
+/* links like support/#contact stop below the sticky header */
+[id] { scroll-margin-top: 110px; }
+@media (max-width: 750px) { [id] { scroll-margin-top: 90px; } }
+
 .site-header {
-  position: relative;
+  position: sticky;
+  top: 0;
   z-index: 20;
+  background: #fff;
   height: 98px;
   display: flex;
   align-items: center;
