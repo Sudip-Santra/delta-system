@@ -150,7 +150,7 @@ br.bd, br.bm { display: none; }
 .card p { font-size: 18px; font-weight: 450; line-height: 1.19; margin-top: 20px; }
 
 .card.yellow { background: var(--yellow); padding: 61px 40px 0; }
-.card.yellow img { width: calc(100% + 80px); max-width: none; height: 377px; object-fit: contain; }
+.card.yellow img { width: calc(100% + 80px); max-width: none; height: 377px; object-fit: cover; /* Wix: cropped image, "fill" */ }
 .card.yellow h2 { margin-top: 70px; max-width: 300px; }
 
 .card.orange { background: var(--orange); color: #fff; padding: 89px 20px 0; }
@@ -163,7 +163,7 @@ br.bd, br.bm { display: none; }
 .card.lavender { background: var(--lavender); color: #fff; padding: 87px 35px 0; }
 .card.lavender h2 { max-width: 240px; }
 .card.lavender p { font-weight: 400; letter-spacing: -0.06em; }
-.card.lavender img { position: absolute; left: 0; bottom: 0; width: 100%; height: 401px; object-fit: cover; object-position: top; }
+.card.lavender img { position: absolute; left: 0; bottom: 0; width: 100%; height: 401px; object-fit: cover; object-position: 56.7% 50%; /* Wix focal point 53% across */ }
 
 .card.grey { background: var(--grey); }
 .card.cyan { background: var(--cyan); }
